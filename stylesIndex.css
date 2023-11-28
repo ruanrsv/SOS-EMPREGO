@@ -1,0 +1,467 @@
+/* .linha{
+color: aliceblue;
+}
+
+.conteudo-diferenciais-titulo{
+color: aliceblue;
+}
+.conteudo-lista{
+color: aliceblue;
+}
+*{
+margin: 0;
+padding: 0;
+border: 0;
+outline: none;
+box-sizing: border-box;
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+body{
+font-size: 100%;
+background: rgb(255,255,255);
+background: rgb(20, 0, 117);
+}
+
+/*HEADER/NAVBAR*/
+
+.hamburguer{
+display: none;
+border: none;
+background: none;
+border-top: 3px solid rgb(8, 0, 117);
+cursor: pointer;
+}
+.conteudo-banner-imagem{
+height: 1000px;
+padding: auto;
+width: 100%;
+text-align: center;
+align-items: center;
+}
+
+.hamburguer::before, .hamburguer::after{
+content: " ";
+display: block;
+width: 30px;
+height: 3px;
+background: rgb(8, 0, 117);
+margin-top: 5px;
+position: relative;
+transition: 0.3s;
+}
+
+.cabecalho{
+position: sticky;
+position: -webkit-sticky;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+padding: 2px;
+background: white;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+top:0;
+border-bottom: 2px solid rgb(4, 0, 117);
+}
+
+.conteudo-principal-titulo{
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  /* margin: 80px; */
+  }
+
+.img-logo{
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.nav-list{
+display: flex;
+gap: 32px;
+list-style: none;
+}
+
+.cabecalho-menu{
+display: flex;
+gap: 24px;
+color:black;
+}
+
+.cabecalho-item{
+font-family: "Montserrat", sans-serif;
+font-weight: 400;
+color: black(18, 0, 117);
+transition: 0.4s ease-in-out;
+cursor: pointer;
+font-size: 18px;
+text-decoration: none;
+border-right: 0.1px solid rgb(4, 0, 117);
+padding-inline-end: 20px;
+}
+
+.cabecalho-item:hover{
+text-decoration: underline;
+transition: 1s ease-in-out;
+}
+.conteudo-principal-texto{
+display: flex;
+padding: 20px;
+align-items: center;
+background: white;
+color: black;
+
+color: black;
+
+}
+
+/*END*/
+
+/*DROPDOWN*/
+.dropdown{
+position: relative;
+display: inline-block;
+}
+
+.dropdown:hover .dropdown-content{
+display: block;
+}
+
+.dropdown-content{
+display: none;
+position: absolute;
+background-color: rgb(10, 0, 117);
+min-height: 50px;
+z-index: 1;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,);
+transition: 1s ease-in;
+}
+
+.dropdown-content a{
+padding: 20px 16px;
+display: block;
+border-right: none;
+font-weight: 400;
+color: white;
+}
+/*DROPDOWN*/
+
+/*SEÇÃO DE RODAPÉ*/
+.rodape{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+background-color: #001f3f;
+border-top: solid 4px rgb(24, 9, 99);
+}
+
+.info{
+font-family: 'Montserrat', sans-serif;
+font-weight: 300;
+font-size: 17px;
+color: white;
+text-align: center;
+}
+
+.info i{
+font-size: 40px;
+justify-content: center;
+}
+
+.rodape-localiza, .rodape-mail, .rodape-contato{
+display: flex;
+flex-direction: row;
+gap: 10px;
+padding: 4px;
+}
+
+.redes-sociais{
+display: flex;
+flex-direction: column;
+align-items: right;
+gap: 10px;
+padding: 4px;
+}
+
+.btn-sociais{
+cursor: pointer;
+font-size: 40px;
+color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SEÇÃO DE RODAPÉ*/
+/*@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,900;1,800&display=swap"); {
+* }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0c0ce94d;
+}
+
+.container {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.212);
+}
+
+.form-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: khaki;
+  padding: 1rem;
+}
+
+.form-image img {
+  width: 31rem;
+}
+
+.form {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 3rem;
+}
+
+.form-header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0rem;
+  padding: 2rem;
+}
+
+.login-button button {
+  border: none;
+  background-color: #6c63ff;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button button:hover {
+  background-color: #6b63fff1;
+}
+
+.login-button button a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+}
+
+.form-header h1::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: #6c63ff;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.1rem;
+}
+
+.input-box input {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #00001c;
+}
+
+.input-box input:houver {
+  outline: 1px solid #6c63ff;
+}
+
+.input-box label .gender-title h6 {
+  font: size 0.75rem;
+  font-weight: 600;
+  color: #000000c0;
+}
+
+.input-box input::placeholder {
+  color: #000000be;
+}
+
+.gender-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.62rem;
+  padding: 0 0.5rem;
+}
+
+.gender-input {
+  display: flex;
+  align-items: center;
+}
+
+.gender-input input {
+  margin-right: 0.35rem;
+}
+
+.gender-input label {
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: #000000c0;
+}
+
+.continue-button button {
+  width: 100%;
+  margin-top: 2.5rem;
+  border: none;
+  background-color: #6c63ff;
+  padding: 0.62rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.continue-button button:hover {
+  background-color: #6b63fff1;
+}
+
+.continue-button button a {
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+@media screen and (max-width: 1330px) {
+  .form-image {
+    display: none;
+  }
+
+  .container {
+    width: 50%;
+  }
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+
+  .input-group {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 10rem;
+    padding-right: 5rem;
+  }
+}
+.gender-input {
+  margin-top: 0.5rem;
+}

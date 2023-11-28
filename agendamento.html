@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="icon" href="./img/2.png">
+	<!-- <img src="img/img.sos logo.jpg" alt="Logo CESM" class="cabecalho-logo"> -->
+	</a>
+	<div class="container">
+		<style>
+
+		</style>
+	</div>
+
+	<!-- <link rel="stylesheet" href="style.css"> -->
+	<title>Agendamento de Emprego</title>
+
+	<style>
+		body {
+			background-color: #001f3f;
+			color: #fff;
+		}
+
+
+		*/ .container {
+			max-width: 600px;
+			margin: auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		form {
+			margin-bottom: 20px;
+		}
+		
+		.center{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container-img{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+		}
+
+		input,
+		select {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 16px;
+			box-sizing: border-box;
+		}
+
+		button {
+			background-color: #4caf50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		*/
+	</style>
+
+</head>
+
+<!-- <section id="inicio" class="carousel-section">
+	<div class="carousel">
+		<img src="https://schmitzadvogados.com.br/wp-content/uploads/2022/09/trabalhador-maritimo.jpeg" width="500" height="400" alt="Imagem 1">
+		<img src="https://findes.com.br/wp-content/uploads/2021/03/Foto-Beneficios_450x300px.png" width="500" height="400" alt="Imagem 2">
+		<img src="https://www.seculodiario.com.br/images/s/Saude/trabalhadores_saude/b2ap3_large_trabalhador_invisivel_saude_1_breno_esaki_agencia_saude_df.jpg" width="500" height="400" alt="Imagem 3">
+	</div>
+</section> -->
+
+<body>
+
+	<!-- <header>
+        <h1>SOS EMPREGO</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">INÍCIO</a></li>
+                <li><a href="#cadastro">CADASTRE-SE</a></li>
+                <li><a href="#marcacoes">MINHAS MARCAÇÕES</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+	<div class="container">
+		<div class="container">
+			<form>
+				<!-- Seu formulário aqui -->
+			</form>
+		</div>
+
+		<div class="container-img"> <a href="index.html">
+			<img src="./img/1.png" href="./index.html" class="img-logo"> </a>
+		</div>
+
+		<div class="container-img">
+			<h1 class="center">Agendamento de Emprego</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<form id="agendamentoForm" style="flex: 1">
+					<label for="nome">Nome:</label>
+					<input type="text" id="nome" required>
+
+					<label for="data">Data:</label>
+					<input type="date" id="data" required>
+
+					<label for="vagas">Vagas de Emprego:</label>
+					<select id="vagas" required onclick="mostrarDetalhes()">
+						<option value="desenvolvedor">Desenvolvedor</option>
+						<option value="Auxiliar Administrativo">Auxiliar Administrativo</option>
+						<option value="Analista Financeiro">Analista Financeiro</option>
+						<option value="designer">Designer</option>
+						<option value="rh">Analista de RH</option>
+						<option value="Acougueiro">Açougueiro</option>
+
+						<!-- Adicione mais opções conforme necessário -->
+					</select>
+
+					<button type="button" onclick="agendar()">Aplicar para vaga</button>
+					<button class="btn btn-danger" type="button" onclick="limpar()">Limpar Formulário</button>
+				</form>
+
+				<table class="table mt-3" style="color: #fff;">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Data</th>
+							<th>Vaga</th>
+							<th>Ação</th>
+						</tr>
+					</thead>
+					<tbody id="tabelaCorpo">
+						<!-- Aqui serão adicionadas as linhas da tabela dinamicamente -->
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<div id="detalhesOpcao1" style="display: none; width: 100%;">
+					<h2 id="titulo"></h2>
+					<p id="detalhes"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+	function agendar() {
+		var nome = document.getElementById('nome').value;
+		var data = document.getElementById('data').value;
+		var vaga = document.getElementById('vagas').value;
+
+		if (nome.trim() === "" || data.trim() === "" || vaga.trim() === "") {
+			alert("Por favor, preencha todos os campos.");
+			return;
+		}
+
+		var tabelaCorpo = document.getElementById("tabelaCorpo");
+		var novaLinha = tabelaCorpo.insertRow();
+
+		// Inserir células na nova linha
+		var celulaNome = novaLinha.insertCell(0);
+		var celulaData = novaLinha.insertCell(1);
+		var celulaVaga = novaLinha.insertCell(2);
+		var celulaAcao = novaLinha.insertCell(3);
+
+
+		// Preencher as células com os valores do formulário
+		celulaNome.innerHTML = nome;
+		celulaData.innerHTML = data;
+		celulaVaga.innerHTML = vaga;
+
+
+		// Adicionar botão de exclusão
+		var botaoExcluir = document.createElement("button");
+		botaoExcluir.type = "button";
+		botaoExcluir.className = "btn btn-danger btn-sm";
+		botaoExcluir.innerHTML = "Excluir";
+		botaoExcluir.onclick = function () {
+			var rowIndex = novaLinha.rowIndex - 1;
+			tabelaCorpo.deleteRow(rowIndex);
+		};
+		celulaAcao.appendChild(botaoExcluir);
+
+		limpar();
+
+	}
+
+	function mostrarDetalhes() {
+		var opcaoSelecionada = document.getElementById("vagas").value;
+
+		// Ocultar todos os detalhes
+		var opcao = document.getElementById("detalhesOpcao1");
+
+		if (opcaoSelecionada == 'desenvolvedor') {
+			var titulo = document.getElementById("titulo");
+			var detalhes = document.getElementById("detalhes");
+
+			titulo.innerHTML = "Desenvolvedor .NET";
+
+			var descricaoHTML = `
+	
+      <p>Valorizamos a criatividade, bom trabalho em equipe e determinação para fazer acontecer.</p>
+
+      <h2>Responsabilidades</h2>
+      <ul>
+        <li>Manutenção/Desenvolvimento de sistemas desenvolvidos na plataforma .Net;</li>
+        <li>Análise e documentação técnica de solução;</li>
+        <li>Interface com usuários para entendimento da demanda.</li>
+      </ul>
+
+      <h2>Qualificações</h2>
+      <p><strong>Habilidades Necessárias:</strong></p>
+      <ul>
+        <li>JavaScript/jQuery,</li>
+        <li>Angular,</li>
+        <li>C# ,</li>
+        <li>Razor,</li>
+        <li>ASPNET MVC 5i,</li>
+      </ul>
+
+    `
+
+			detalhes.innerHTML = descricaoHTML;
+		}
+
+		if (opcaoSelecionada == 'designer') {
+			var titulo = document.getElementById("titulo");
+			var detalhes = document.getElementById("detalhes");
+
+			titulo.innerHTML = "Designer Analista";
+			var descricaoHTML = ` <p><strong>Localização:</strong> Salvador-BA</p>
+
+<h2>Descrição da Vaga</h2>
+<p>Você será responsável pela criação de marcas, identidade visual e suas aplicações, construção de ilustrações e vetorização de projetos.</p>
+
+<h2>Pré-requisitos:</h2>
+
+  <li>Conhecimento Avançado em Illustrator e Photoshop;</li>
+  <li>Capacidade de gerenciamento de tempo, objetivando sempre a entrega de bons resultados dentro das deadlines;</li>
+  <li>Boa comunicação e expressão de ideias;</li>
+  <li>Experiência de pelo menos 2 anos na área de brand design;</li>
+`;
+			detalhes.innerHTML = descricaoHTML;
+		}
+
+		if (opcaoSelecionada == "rh") {
+			var titulo = document.getElementById("titulo");
+			var detalhes = document.getElementById("detalhes");
+
+			titulo.innerHTML = "Analista de RH Senior";
+			detalhes.innerHTML = `<p>Localização: Aracaju - SE</p>
+			
+			<h2>Atribuições:</h2> 
+			<p>Será responsável pelo o fechamento de folha, controle de registro de ponto, 
+			admissão e demissão, avaliação comportamental e recrutamento e Seleção (R&S).</p>`;
+
+
+		}
+
+		if (opcaoSelecionada == "Auxiliar Administrativo") {
+			var titulo = document.getElementById("titulo");
+			var detalhes = document.getElementById("detalhes");
+
+			titulo.innerHTML = "Auxiliar Administrativo";
+			detalhes.innerHTML = `<p>Localização: Aracaju - SE</p>
+			
+			<h2>Requisitos</h2> 
+			<p>Ensino superior em andamento, nas áreas de administração, gestão ou similar. 
+			Necessário possuir experiência em atendimentos, desejável ter conhecimento com informática e no 
+			Pacote Office para execução de rotinas de processo internos e sistemas da empresa..</p>`;
+		}
+
+
+		if (opcaoSelecionada == "Analista Financeiro") {
+			var titulo = document.getElementById("titulo");
+			var detalhes = document.getElementById("detalhes");
+
+			titulo.innerHTML = "Analista Financeiro";
+			detalhes.innerHTML = `<p>Localização: Aracaju - SE</p>
+			
+			<h2>Atribuições</h2> 
+			<p>Executar demandas financeiras de contas a pagar e a receber; Utilizar sistema para atualizar e alimentar banco de dados, 
+			conciliação bancária, fazer leitura técnica de informações financeiras (DRE)
+			
+			<h2>Requisitos</h2>
+			Ensino Superior em Administração, Contabilidade e afins.</p>`;
+
+		}
+
+		if (opcaoSelecionada == "Acougueiro") {
+			var titulo = document.getElementById("titulo");
+			var detalhes = document.getElementById("detalhes");
+
+			titulo.innerHTML = "Açougueiro";
+			detalhes.innerHTML = `<p>Localização: Aracaju - SE</p>
+			
+			<h2>Requisitos</h2> 
+			<p>possuir experiência na função desejável na aréa hospitalar, 
+			comunicação, iniciativa curiosidade, flexibilidade, Competitividade e agilidade.</p>`;
+
+		}
+
+		opcao.style.display = "block"
+	}
+
+	function limpar() {
+		// Limpar os campos do formulário após o agendamento
+		document.getElementById('nome').value = '';
+		document.getElementById('data').value = '';
+		document.getElementById('vagas').value = '';
+		document.getElementById("detalhesOpcao1").style.display = "none";
+	}
+
+
+</script>
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
